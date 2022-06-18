@@ -1,0 +1,63 @@
+.wrapper {
+  margin-left: 60px;
+  padding: 0.5rem 2rem;
+  display: flex;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .left-nav {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .path,
+      .arrow {
+        color: grey;
+      }
+    }
+
+    .right-nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+
+      .util {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .search-bar {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          input {
+            border: none;
+            outline: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+          }
+
+          svg:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        img {
+          width: 25px;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
