@@ -10,7 +10,7 @@ const Location = () => {
     <Card>
       <div className='location'>
         <div className='top'>
-          <div className='desc'>Lokasi</div>
+          <div className='title'>Lokasi</div>
           <span>Lihat semua</span>
         </div>
         <div className='bottom'>

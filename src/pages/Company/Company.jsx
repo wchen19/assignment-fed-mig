@@ -1,4 +1,5 @@
 import React from 'react';
+import Activity from '../../components/Activity/Activity';
 import CompanyInfo from '../../components/CompanyInfo/CompanyInfo';
 import Location from '../../components/Location/Location';
 import './Company.scss';
@@ -10,11 +11,17 @@ const Company = () => {
         <CompanyInfo />
       </div>
       <div className='flex-3 column'>
-        <div className='flex-1'>
+        <div>
           <Location />
         </div>
-        <div className='flex-2'>
-          <Location />
+        <div className='flex-2 row'>
+          <div className='flex-1 column'>
+            <Activity />
+            <Activity />
+          </div>
+          <div className='flex-1'>
+            <Activity />
+          </div>
         </div>
       </div>
     </div>
