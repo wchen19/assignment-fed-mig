@@ -1,0 +1,115 @@
+.bank {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    button {
+      display: flex;
+      gap: 1rem;
+      background: #0a7900;
+      color: white;
+      font-size: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1.5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .bank-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      .bank-card {
+        border-radius: 10px;
+        height: 6.5rem;
+        width: 35%;
+        position: relative;
+
+        img {
+          width: 40px;
+          position: absolute;
+          bottom: 20px;
+          right: 10px;
+        }
+      }
+
+      .blue-gr {
+        background: linear-gradient(
+          90deg,
+          rgba(33, 146, 170, 1) 0%,
+          rgba(90, 226, 255, 1) 100%
+        );
+      }
+
+      .yellow-gr {
+        background: linear-gradient(
+          270deg,
+          rgba(147, 156, 0, 1) 0%,
+          rgba(222, 235, 0, 1) 100%
+        );
+      }
+
+      .bank-detail {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        gap: 0.2rem;
+
+        .name {
+          display: flex;
+          justify-content: space-between;
+          font-weight: bold;
+          margin-bottom: 2rem;
+
+          .tool {
+            display: flex;
+            gap: 0.5rem;
+
+            svg {
+              font-size: 1rem;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+
+            .edit {
+              color: #0a7900;
+            }
+
+            .delete {
+              color: red;
+            }
+          }
+        }
+
+        .account,
+        .currency {
+          font-size: 0.9rem;
+          color: gray;
+        }
+      }
+    }
+  }
+}
