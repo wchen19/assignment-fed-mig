@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Profile from '../../assets/profile.png';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
+import Company from '../Company/Company';
 import './Wrapper.scss';
 
 const Wrapper = () => {
@@ -51,7 +52,9 @@ const Wrapper = () => {
           </div>
         </div>
       </div>
-      <div className='content'></div>
+      <div className='content'>
+        <Company />
+      </div>
     </div>
   );
 };
