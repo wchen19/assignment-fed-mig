@@ -18,21 +18,21 @@ const Location = () => {
             <MapsHomeWorkRoundedIcon />
             <div className='detail'>
               <div className='number'>20</div>
-              <span>Induk</span>
+              <div className='desc'>Induk</div>
             </div>
           </div>
           <div className='box-2'>
             <BuildRoundedIcon />
             <div className='detail'>
               <div className='number'>3</div>
-              <span>Sub Lokasi Level 1</span>
+              <div className='desc'>Sub Lokasi Level 1</div>
             </div>
           </div>
           <div className='box-3'>
             <WarehouseRoundedIcon />
             <div className='detail'>
               <div className='number'>1</div>
-              <span>Sub Lokasi Level 2</span>
+              <div className='desc'>Sub Lokasi Level 2</div>
             </div>
           </div>
         </div>

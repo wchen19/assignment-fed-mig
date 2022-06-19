@@ -1,0 +1,51 @@
+.relation {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    span {
+      color: #0a7900;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .relation-item {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      svg {
+        font-size: 2rem;
+      }
+
+      .detail {
+        .number {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+        .desc {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

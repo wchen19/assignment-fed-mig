@@ -2,6 +2,7 @@ import React from 'react';
 import Activity from '../../components/Activity/Activity';
 import CompanyInfo from '../../components/CompanyInfo/CompanyInfo';
 import Location from '../../components/Location/Location';
+import Relation from '../../components/Relation/Relation';
 import './Company.scss';
 
 const Company = () => {
@@ -16,8 +17,8 @@ const Company = () => {
         </div>
         <div className='flex-2 row'>
           <div className='flex-1 column'>
-            <Activity />
-            <Activity />
+            <Relation />
+            <Relation />
           </div>
           <div className='flex-1'>
             <Activity />
