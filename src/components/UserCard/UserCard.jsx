@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '../../components/Card/Card';
 import EditRoundedIcon from '@mui/icons-material/EditRounded';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import './UserCard.scss';
 
-const UserCard = ({ userData, deleteModal }) => {
-  const [switchOn, setSwitchOn] = useState(true);
-
-  const switchClick = () => {
-    setSwitchOn(!switchOn);
-  };
-
+const UserCard = ({ userData, deleteModal, editModal }) => {
   return (
     <>
       <Card>
@@ -21,7 +15,10 @@ const UserCard = ({ userData, deleteModal }) => {
               <div className='id'>{userData?.id}</div>
             </div>
             <div className='tool'>
-              <EditRoundedIcon className='edit' />
+              <EditRoundedIcon
+                className='edit'
+                onClick={() => editModal(userData)}
+              />
               <DeleteRoundedIcon
                 className='delete'
                 onClick={() => deleteModal(userData?.name, userData?.id)}
@@ -36,16 +33,6 @@ const UserCard = ({ userData, deleteModal }) => {
                 style={{ color: !userData?.status && 'red' }}
               >
                 {userData?.status ? 'Aktif' : 'Tidak Aktif'}
-                <div
-                  className='switch'
-                  style={{ backgroundColor: !userData?.status && 'gray' }}
-                  onClick={switchClick}
-                >
-                  <div
-                    className='ball'
-                    style={{ left: !switchOn && '20px' }}
-                  ></div>
-                </div>
               </div>
             </div>
             <div className='detail'>

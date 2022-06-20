@@ -4,11 +4,13 @@ import './User.scss';
 import UserCard from '../../components/UserCard/UserCard';
 import DeleteModal from '../../components/DeleteModal/DeleteModal';
 import AddModal from '../../components/AddModal/AddModal';
+import EditModal from '../../components/EditModal/EditModal';
 
 const User = ({ accessToken }) => {
   const [userData, setUserData] = useState([]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   const [user, setUser] = useState({});
   const [searchKey, setSearchKey] = useState('');
   const [sortKey, setSortKey] = useState(false);
@@ -21,6 +23,11 @@ const User = ({ accessToken }) => {
 
   const addModal = () => {
     setShowAddModal(!showAddModal);
+  };
+
+  const editModal = (userData) => {
+    setShowEditModal(!showEditModal);
+    setUser(userData);
   };
 
   const deleteUser = async (id) => {
@@ -108,13 +115,24 @@ const User = ({ accessToken }) => {
       {showAddModal && (
         <AddModal addModal={addModal} accessToken={accessToken} />
       )}
+      {showEditModal && (
+        <EditModal
+          editModal={editModal}
+          accessToken={accessToken}
+          user={user}
+        />
+      )}
       <div className='bottom'>
         {result && (
           <>
             {result.map((data) => {
               return (
                 <div className='container' key={data.id}>
-                  <UserCard userData={data} deleteModal={deleteModal} />
+                  <UserCard
+                    userData={data}
+                    deleteModal={deleteModal}
+                    editModal={editModal}
+                  />
                 </div>
               );
             })}
