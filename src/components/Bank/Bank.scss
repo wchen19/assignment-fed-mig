@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: fit-content;
 
   .top {
     display: flex;
@@ -127,6 +126,11 @@
 
             svg {
               font-size: 1rem;
+
+              @include breakpoint(s) {
+                font-size: 1.2rem;
+                padding: 0 0.5rem;
+              }
 
               &:hover {
                 cursor: pointer;

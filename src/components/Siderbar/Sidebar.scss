@@ -64,7 +64,8 @@
 
       @include breakpoint(s) {
         border-left: none;
-        background-color: white;
+        background-color: rgba($color: #0a7900, $alpha: 0.2);
+        border-radius: 50px;
       }
     }
   }

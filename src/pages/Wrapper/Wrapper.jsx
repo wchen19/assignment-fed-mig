@@ -1,13 +1,30 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import Profile from '../../assets/profile.png';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import NotificationsRoundedIcon from '@mui/icons-material/NotificationsRounded';
-import Company from '../Company/Company';
+import { Outlet } from 'react-router-dom';
 import './Wrapper.scss';
 
-const Wrapper = () => {
+const Wrapper = ({ accessToken, setAccessToken }) => {
   const [value, setValue] = useState('');
   const [show, setShow] = useState(false);
+
+  const login = async () => {
+    const res = await axios.post(
+      'https://mitramas-test.herokuapp.com/auth/login',
+      {
+        email: 'akun12@mig.id',
+        password: 'BA8A9E03',
+      }
+    );
+
+    if (res.status === 200) setAccessToken(res.data.access_token);
+  };
+
+  const logout = () => {
+    setAccessToken('');
+  };
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -47,13 +64,19 @@ const Wrapper = () => {
             </div>
             <NotificationsRoundedIcon />
           </div>
-          <div className='profile'>
-            <img src={Profile} alt='profile' /> John Doe
-          </div>
+          {accessToken ? (
+            <div className='profile' onClick={logout}>
+              <img src={Profile} alt='profile' /> John Doe
+            </div>
+          ) : (
+            <button className='login' onClick={login}>
+              Login
+            </button>
+          )}
         </div>
       </div>
       <div className='content'>
-        <Company />
+        <Outlet />
       </div>
     </div>
   );

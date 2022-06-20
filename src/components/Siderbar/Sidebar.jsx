@@ -9,6 +9,7 @@ import LayersRoundedIcon from '@mui/icons-material/LayersRounded';
 import KeyboardCommandKeyRoundedIcon from '@mui/icons-material/KeyboardCommandKeyRounded';
 import ViewInArRoundedIcon from '@mui/icons-material/ViewInArRounded';
 import SavedSearchRoundedIcon from '@mui/icons-material/SavedSearchRounded';
+import { Link } from 'react-router-dom';
 import './Sidebar.scss';
 
 const Sidebar = () => {
@@ -35,14 +36,18 @@ const Sidebar = () => {
         <div className='menu' onClick={handleClick}>
           <Inventory2RoundedIcon />
         </div>
-        <div className='menu active-tab' onClick={handleClick}>
-          <ApartmentRoundedIcon />
-        </div>
+        <Link to='perusahaan/mitramas-infosys-global'>
+          <div className='menu active-tab' onClick={handleClick}>
+            <ApartmentRoundedIcon />
+          </div>
+        </Link>
       </div>
       <div className='menu-container'>
-        <div className='menu' onClick={handleClick}>
-          <PeopleOutlineRoundedIcon />
-        </div>
+        <Link to='user'>
+          <div className='menu' onClick={handleClick}>
+            <PeopleOutlineRoundedIcon />
+          </div>
+        </Link>
         <div className='menu' onClick={handleClick}>
           <LayersRoundedIcon />
         </div>
