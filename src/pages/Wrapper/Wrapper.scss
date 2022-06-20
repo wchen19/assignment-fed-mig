@@ -1,8 +1,19 @@
+@import '../../App.scss';
+
 .wrapper {
   margin-left: 60px;
   padding: 0.5rem 2rem;
   display: flex;
   flex-direction: column;
+
+  @include breakpoint(s) {
+    margin-left: 0;
+    gap: 1rem;
+  }
+
+  @include breakpoint(xs) {
+    padding: 1rem;
+  }
 
   .nav {
     display: flex;
@@ -10,10 +21,19 @@
     justify-content: space-between;
     width: 100%;
 
+    @include breakpoint(md) {
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+
     .left-nav {
       display: flex;
       align-items: center;
       gap: 1rem;
+
+      @include breakpoint(md) {
+        align-self: flex-start;
+      }
 
       .path,
       .arrow {
@@ -29,6 +49,16 @@
       display: flex;
       align-items: center;
       gap: 2.5rem;
+
+      @include breakpoint(md) {
+        align-self: flex-end;
+      }
+
+      @include breakpoint(xs) {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-end;
+      }
 
       .util {
         display: flex;

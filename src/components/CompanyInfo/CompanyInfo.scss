@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .background {
   position: absolute;
   width: 100%;
@@ -6,6 +8,14 @@
   z-index: 0;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+
+  @include breakpoint(md) {
+    height: 6%;
+  }
+
+  @include breakpoint(s) {
+    height: 15%;
+  }
 }
 
 .company-info {
@@ -37,6 +47,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin-top: 1.7rem;
+    text-align: center;
   }
 
   .service {

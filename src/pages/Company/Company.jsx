@@ -8,20 +8,20 @@ import './Company.scss';
 
 const Company = () => {
   return (
-    <div className='company row'>
-      <div className='flex-1'>
+    <div className='company'>
+      <div className='main-section-1'>
         <CompanyInfo />
       </div>
-      <div className='flex-3 column'>
+      <div className='main-section-2'>
         <div>
           <Location />
         </div>
-        <div className='flex-2 row'>
-          <div className='flex-1 column'>
+        <div className='sub-container'>
+          <div className='sub-section-1'>
             <Bank />
             <Relation />
           </div>
-          <div className='flex-1'>
+          <div className='sub-section-2'>
             <Activity />
           </div>
         </div>

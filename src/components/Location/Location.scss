@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .location {
   display: flex;
   flex-direction: column;
@@ -32,27 +34,45 @@
     gap: 1rem;
     width: 100%;
 
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
+
     .box-1,
     .box-2,
     .box-3 {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
       width: 100%;
       background-color: rgba($color: #0a7900, $alpha: 1);
       color: white;
       padding: 1rem;
       border-radius: 5px;
 
+      @include breakpoint(l) {
+        flex-direction: column;
+      }
+
+      @include breakpoint(md) {
+        padding: 1rem 0;
+      }
+
       svg {
         font-size: 3rem;
       }
 
       .detail {
+        text-align: right;
+
+        @include breakpoint(l) {
+          text-align: center;
+        }
+
         .number {
           font-size: 1.5rem;
           font-weight: bold;
-          text-align: right;
         }
 
         .desc {
