@@ -53,10 +53,7 @@ function App() {
               />
             }
           >
-            <Route
-              path='perusahaan/mitramas-infosys-global'
-              element={<Company />}
-            />
+            <Route index path='/' element={<Company />} />
             <Route path='user' element={<User accessToken={accessToken} />} />
           </Route>
         </Routes>
