@@ -36,7 +36,7 @@ const Sidebar = () => {
         <div className='menu' onClick={handleClick}>
           <Inventory2RoundedIcon />
         </div>
-        <Link to='perusahaan/mitramas-infosys-global'>
+        <Link to='/'>
           <div className='menu active-tab' onClick={handleClick}>
             <ApartmentRoundedIcon />
           </div>
